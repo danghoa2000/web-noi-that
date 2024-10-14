@@ -1,6 +1,75 @@
 * {
     font-size: 18px;
     line-height: 22px;
+    font-family: "Afacad";
+}
+
+#menu,
+#language {
+    background-color: transparent;
+    border-color: #d1ad53;
+    padding: 5px 20px;
+    border-radius: 20px;
+    i {
+        margin-right: 5px;
+    }
+    + .dropdown-menu {
+        background-color: transparent;
+        border-color: #012842;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        a {
+            padding: 10px 25px;
+            color: #fff;
+            text-decoration: none;
+            display: flex;
+            width: 100%;
+
+            &:hover {
+                background-color: rgb(1 40 66 / 20%);
+                color: #d1ad53;
+            }
+        }
+    }
+}
+
+#menu::after {
+    display: none;
+}
+
+#language {
+    color: #d1ad53;
+    border: 0;
+}
+.menu-tool-bar {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+        float: left;
+        &.active a {
+            color: #d1ad53;
+        }
+    }
+    a {
+        padding: 10px 25px;
+        color: #fff;
+        text-decoration: none;
+        display: flex;
+        width: 100%;
+        min-width: max-content;
+        text-transform: uppercase;
+
+        &:hover {
+            color: #d1ad53;
+        }
+    }
+}
+
+.img-header {
+    width: 40px;
 }
 
 img {
@@ -130,12 +199,12 @@ img {
         justify-content: center;
         align-items: center;
         position: absolute;
-        border: 1px solid #D2D2D2;
+        border: 1px solid #d2d2d2;
         z-index: 1;
-        
+
         img {
             height: 100%;
-            object-fit: none;
+            object-fit: cover;
         }
     }
 }
@@ -143,4 +212,206 @@ img {
 .background-light {
     background-color: #fff;
     color: #000;
+}
+
+.carousel-indicators {
+    bottom: -40px;
+
+    [data-bs-target] {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: #fff;
+
+        &.active {
+            background-color: #d1ad53;
+        }
+    }
+}
+
+#serviceCarousel {
+    .carousel-indicators {
+        display: none;
+    }
+}
+
+.carousel-item {
+    transition:
+        transform 1s ease,
+        opacity 0.5s ease-out;
+}
+
+.pdf-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+
+    span {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        color: #d1ad53;
+        border: 1px solid #d1ad53;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Abril Fatface";
+    }
+    p {
+        margin-left: 20px;
+        text-transform: uppercase;
+        color: #fff;
+        margin-bottom: 0;
+        font-size: 14px;
+        font-weight: 500;
+        width: max-content;
+    }
+}
+
+.scroll-top {
+    p {
+        margin-left: 0;
+        margin-right: 20px;
+    }
+
+    button {
+        width: 60px;
+        height: 60px;
+        color: #d1ad53;
+    }
+}
+
+.footer_2 {
+    p {
+        margin-bottom: 0.25rem;
+        color: #999595;
+    }
+}
+
+.footer_3 {
+    span,
+    a {
+        color: #d1ad53;
+        font-size: 14px;
+    }
+    p,
+    i,
+    a {
+        font-size: 14px;
+    }
+
+    a {
+        text-decoration: none;
+    }
+}
+
+.breadcrumb-item,
+.breadcrumb-item.active {
+    color: #385970;
+    font-size: 16px;
+    line-height: 20px;
+    text-transform: uppercase;
+
+    + .breadcrumb-item::before {
+        content: ">";
+        color: #385970;
+    }
+    a {
+        color: #385970;
+        text-decoration: none;
+    }
+}
+
+.thumbnail-background {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.title-page {
+    margin-top: -40px;
+    position: relative;
+    .title {
+        font-size: 80px;
+        line-height: 84px;
+        text-transform: uppercase;
+    }
+}
+
+.introduce-item {
+    margin-bottom: 35px;
+    & > div {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+
+        span {
+            margin-left: 10px;
+            font-size: 24px;
+        }
+    }
+    img {
+        height: 25px;
+    }
+}
+
+.col-30 {
+    width: 30%;
+}
+
+.core-team {
+    &-name {
+        font-size: 24px;
+        font-family: "Abril Fatface";
+        margin: 20px 0;
+    }
+    &-role {
+        padding-left: 10px;
+        font-size: 18px;
+        color: #d1ad53;
+        text-transform: uppercase;
+        &::before {
+            margin-bottom: 4px;
+            content: "";
+            display: inline-block;
+            width: 5px;
+            height: 5px;
+            background-color: #d1ad53;
+            border-radius: 50%;
+            margin-right: 5px;
+        }
+    }
+}
+
+.box-project {
+    display: inline-block;
+    width: 32%;
+    margin-bottom: 20px;
+    margin-right: 10px;
+}
+
+.text-logo {
+    font-size: 24px;
+    line-height: 30px;
+    color: #012842;
+    display: block;
+    width: 100%;
+    font-weight: bold;
+}
+.layout_2 {
+    .text-logo {
+        color: #fff;
+    }
+}
+
+.btn-slide-news-page {
+    color: #d1ad53;
+    &:hover {
+        color: #fff;
+    }
 }

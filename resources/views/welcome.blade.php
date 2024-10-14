@@ -8,7 +8,8 @@
     <title>Laravel</title>
 
     <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=alegreya-sc:400|allison:400|beau-rivage:400|abril-fatface:400"
+    <link
+        href="https://fonts.bunny.net/css?family=alegreya-sc:400|allison:400|beau-rivage:400|abril-fatface:400|afacad:400"
         rel="stylesheet" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.3.0/css/all.min.css">
@@ -20,7 +21,8 @@
 <body class="font-sans antialiased">
     <div class="" style="background-color: #012842; color: #fff">
         <div class="" style="height: 450px; overflow: hidden; position: relative">
-            <img id="background" style="" src="{{ asset('img/bg.jfif') }}" alt="Laravel background" />
+            @include('components.header')
+            <img id="background" style="position: absolute; top: 0; left: 0;" src="{{ asset('img/bg.jfif') }}" alt="Laravel background" />
             <div class=""
                 style="position: absolute; top:0; left: 0; background-color: #012842; opacity: 0.6; width: 100%; height: 100%;">
             </div>
@@ -111,67 +113,33 @@
                         </div>
                         <div class="d-flex" style="flex-direction: column; position: absolute; bottom: 10px; right: 0;">
                             <button class="btn btn-18 btn-cicle btn-outline btn-outline-default"
-                                style="margin-bottom: 15px" data-bs-target="#carouselExampleInterval"
-                                data-bs-slide="prev"><i class="fas fa-arrow-right"></i></button>
+                                style="margin-bottom: 15px" data-bs-target="#serviceCarousel" data-bs-slide="prev"><i
+                                    class="fas fa-arrow-right"></i></button>
                             <button class="btn btn-18 btn-cicle btn-outline btn-outline-default"><i
-                                    class="fas fa-arrow-left" data-bs-target="#carouselExampleInterval"
+                                    class="fas fa-arrow-left" data-bs-target="#serviceCarousel"
                                     data-bs-slide="next"></i></button>
                         </div>
                     </div>
 
                     <div class="col-8">
-                        <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <div class="row">
-                                        <div class="col-6">
-                                            <div class="service-item">
-                                                <img src="{{ asset('img/image.png') }}" alt="">
-                                                <div class="content">
-                                                    <p class="title">Thiết kế kiến trúc</p>
-                                                    <a href="" class="btn btn-18 btn-outline btn-outline-default">Tìm hiểu
-                                                        thêm</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-6">
-                                            <div class="service-item">
-                                                <img src="{{ asset('img/image_2.png') }}" alt="">
-                                                <div class="content">
-                                                    <p class="title">Thiết kế kiến trúc</p>
-                                                    <a href="" class="btn btn-18 btn-outline btn-outline-default">Tìm hiểu
-                                                        thêm</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <div class="row">
-                                        <div class="col-6">
-                                            <div class="service-item">
-                                                <img src="{{ asset('img/image.png') }}" alt="">
-                                                <div class="content">
-                                                    <p class="title">Thiết kế kiến trúc</p>
-                                                    <a href="" class="btn btn-18 btn-outline btn-outline-default">Tìm hiểu
-                                                        thêm</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-6">
-                                            <div class="service-item">
-                                                <img src="{{ asset('img/image_2.png') }}" alt="">
-                                                <div class="content">
-                                                    <p class="title">Thiết kế kiến trúc</p>
-                                                    <a href="" class="btn btn-18 btn-outline btn-outline-default">Tìm hiểu
-                                                        thêm</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <?php
+                        $customerData = [];
+                    ?>
+
+                        @for ($i = 0; $i <= 5; $i++) <?php $customerResponse=(object) [ 'img'=> ($i % 2 == 0 ?
+                            ('img/image_2.png') : ('img/image.png')),
+                            "title" => $i % 2 . ' Thiết kế kiến trúc',
+                            ];
+                            $customerData[$i] = $customerResponse;
+                            ?>
+                            @endfor
+
+                            @include('components.carousel', [
+                            'id' => 'serviceCarousel',
+                            'data' => $customerData,
+                            'component' => \Blade::render('components.service_carousel', ['data' => $customerData, 'itemPerSlide' => 2])
+                            ])
+
                     </div>
                 </div>
             </div>
@@ -179,21 +147,23 @@
 
         <div id="design" class="design" style="position: relative">
             <div class="">
-                <div class="background" style="background-image: url({{ asset('img/design.jfif') }}); position: absolute; top:0; left:0; width: 100%"> </div>
+                <div class="background"
+                    style="background-image: url({{ asset('img/design.jfif') }}); position: absolute; top:0; left:0; width: 100%">
+                </div>
                 <div class=""
                     style="position: absolute; top:0; left: 0; background-color: #012842; opacity: 0.6; width: 100%; height: 100%;">
                 </div>
             </div>
             <div class="container" style="height: 450px; position: relative;">
-                <div class=""
-                    style="position: absolute; top:70px; left: 0; width: 100%; height: 100%;">
+                <div class="" style="position: absolute; top:70px; left: 0; width: 100%; height: 100%;">
                     <span style="font-size: 40px; line-height: 45px">
-                        Triết lý  <br> &ensp; thiết kế
+                        Triết lý <br> &ensp; thiết kế
                     </span>
                 </div>
                 <span class="ellipse" style="width: 20%; height: 20%;"></span>
-                <span class="cicle" style="width: 150px; height: 150px; left: 13%; bottom: -80px; background-color: #fff">
-                    <img src="{{ asset('img/1.png') }}" alt="">
+                <span class="cicle"
+                    style="width: 150px; height: 150px; left: 13%; bottom: -80px; background-color: #fff">
+                    <img src="{{ asset('img/1.png') }}" alt="" style="object-fit: none">
                 </span>
                 <span class="ellipse" style="width: 60%; height: 70%;"></span>
                 <span class="cicle" style="width: 100px; height: 100px; left: 57%; bottom: -50px;">
@@ -204,10 +174,10 @@
                     <img src="{{ asset('img/img_2.png') }}" alt="">
                 </span>
             </div>
-            
-          
         </div>
-        <div class="container-fluid background-light " style="padding-top:150px; padding-bottom: 65px; position: relative;">
+
+        <div class="container-fluid background-light "
+            style="padding-top:150px; padding-bottom: 65px; position: relative;">
             <div style="position: absolute; bottom: 30px; left: 0; width: 25%;">
                 <img src="{{ asset('img/Isolation_Mode.png') }}" alt="">
             </div>
@@ -220,7 +190,13 @@
                         <span style="font-size: 45px; line-height: 50px; color: #012842; text-transform: uppercase">
                             Tuyên ngôn
                         </span>
-                        <span style="font-size: 65px; line-height: 65px; color: #D1AD53; font-family: 'Beau Rivage', handwriting;">của Founder</span>
+                        <span style="
+                                font-size: 65px; 
+                                line-height: 65px; 
+                                color: #D1AD53; 
+                                font-family: 'Beau Rivage', handwriting;">
+                            của Founder
+                        </span>
                     </div>
 
                     <div class="col-4">
@@ -228,16 +204,78 @@
                     </div>
 
                     <div class="col-4 d-flex justify-content-center" style="flex-direction: column">
-                            <p style="">
-                                “Lựa chọn phong cách cổ điển có thể phản ánh sự trân trọng đối với sự thanh lịch vượt thời gian, tính đối xứng và vẻ đẹp trường tồn lấy cảm hứng từ các nền văn minh lịch sử.”
-                            </p>
-                            <div class="d-flex justify-content-center mt-4">
-                                <a href="" class="btn btn-18 btn-outline btn-outline-yellow" style="color: #012842">Tìm hiểu thêm</a>
-                            </div>
+                        <p style="">
+                            “Lựa chọn phong cách cổ điển có thể phản ánh sự trân trọng đối với sự thanh lịch vượt thời
+                            gian, tính đối xứng và vẻ đẹp trường tồn lấy cảm hứng từ các nền văn minh lịch sử.”
+                        </p>
+                        <div class="d-flex justify-content-center mt-4">
+                            <a href="" class="btn btn-18 btn-outline btn-outline-yellow" style="color: #012842">Tìm hiểu
+                                thêm</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+
+        <div class="container-fluid" style="padding-top:150px; padding-bottom: 65px; position: relative;">
+            <div class="container">
+                <div class="d-flex justify-content-center align-items-center" style="flex-direction: column">
+                    <span
+                        style="font-size: 80px; line-height: 80px; color: #D1AD53; font-family: 'Beau Rivage', handwriting;">Cảm
+                        nhận</span>
+                    <span style="font-size: 40px; line-height: 40px; color: #fff; text-transform: uppercase">
+                        Khách Hàng
+                    </span>
+                </div>
+                <div class="row">
+                    <?php
+                        $customerData = [];
+                    ?>
+
+                    @for ($i = 0; $i < 5; $i++) <?php $customerResponse=(object) [ 'img'=> asset('img/landpage.png'),
+                        "content" => $i . ' Archi World có đội ngũ quản lý và nhân viên trẻ trung, chuyên nghiệp. Từ sếp
+                        tới nhân viên đều nhiệt tình, dễ thương. Sức trẻ của các bạn thể hiện trong từng ý tưởng và tinh
+                        thần nhiệt huyết với công việc.',
+                        'info' => $i. ' Anh Lê Anh Tuấn _ Mỹ Đình 1, Hà Nội'
+                        ];
+
+                        $customerData[$i] = $customerResponse;
+                        ?>
+                        @endfor
+
+                        @include('components.carousel', [
+                        'id' => 'customerData',
+                        'data' => $customerData,
+                        'component' => \Blade::render('components.customer_response', ['data' => $customerData])
+                        ])
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid background-light"
+            style="padding-top:150px; padding-bottom: 65px; position: relative;">
+            <div class="container">
+                <div class="d-flex justify-content-center align-items-center" style="flex-direction: column">
+                    <span
+                        style="font-size: 80px; line-height: 80px; color: #D1AD53; font-family: 'Beau Rivage', handwriting;">Đối
+                        tác</span>
+                    <span style="font-size: 40px; line-height: 40px; color: #012842; text-transform: none">
+                        Chiến Lược
+                    </span>
+                </div>
+                <div class="d-flex justify-content-center align-items-center">
+                    <hr style="background: #D1AD53; height: 150px; width:2px">
+                </div>
+                <div class="d-flex justify-content-center align-items-center flex-wrap">
+                    @for ($i = 1; $i <= 6; $i++) <div style="display: block; width: 135px; height: 135px; margin: 10px">
+                        <img src="{{ asset('img/img_1.png') }}" alt="">
+                </div>
+                @endfor
+            </div>
+        </div>
+    </div>
+
+    @include('components.footer')
     </div>
 </body>
 
