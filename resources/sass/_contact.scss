@@ -1,0 +1,49 @@
+.contact-form {
+    padding: 15px 25px;
+    border: 1px solid #d1ad53;
+    background: linear-gradient(231.32deg, #041832 0.58%, rgba(8, 50, 106, 0) 99.5%);
+    label {
+        font-size: 14px;
+        color: #a9a9a9;
+    }
+
+    .project-title {
+        font-size: 25px;
+        margin-top: 10px;
+        text-align: center;
+    }
+}
+
+.contact-with-me {
+    padding: 25px 15px;
+    border-radius: 18px;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    .contact-item {
+        display: flex;
+        align-items: center;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        max-width: 100%;
+        .icon {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            overflow: hidden;
+            background-color: #041832;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 30px;
+        }
+        span {
+            margin-left: 15px;
+            font-size: 16px;
+            color: #6f6f6f;
+            word-wrap: break-word;
+            width: calc(100% - 30px);
+        }
+    }
+}

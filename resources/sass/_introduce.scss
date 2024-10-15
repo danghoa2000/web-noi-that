@@ -1,0 +1,44 @@
+.core-team {
+    width: 30%;
+    background: #012842;
+    position: relative;
+    padding: 25px;
+    overflow: hidden;
+    @media screen and (max-width: 768px) {
+        width: 100%;
+    }
+
+
+    &-name {
+        font-size: 24px;
+        font-family: "Abril Fatface";
+        margin: 20px 0;
+    }
+    &-role {
+        padding-left: 10px;
+        font-size: 18px;
+        color: #d1ad53;
+        text-transform: uppercase;
+        &::before {
+            margin-bottom: 4px;
+            content: "";
+            display: inline-block;
+            width: 5px;
+            height: 5px;
+            background-color: #d1ad53;
+            border-radius: 50%;
+            margin-right: 5px;
+        }
+    }
+
+    .img-background {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 50%;
+    }
+    .img-display {
+        border-radius: 10px;
+        width: 70%;
+    }
+}

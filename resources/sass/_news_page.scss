@@ -1,0 +1,35 @@
+.news-page {
+    .title-page {
+        position: relative;
+        margin-top: 10px;
+        .title {
+            position: absolute;
+            top: 10px;
+            z-index: 1;
+            @media screen and (max-width: 768px) {
+                font-size: 45px;
+                line-height: 50px;
+            }
+        }
+    }
+
+    .service {
+        margin-top: 20px;
+        background: #012842;
+    }
+
+    .service-item {
+        // padding: 10px;
+    }
+
+    .slick-slide {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .slick-list {
+        margin-left: -10px;
+        margin-right: -10px;
+        pointer-events: none;
+    }
+}

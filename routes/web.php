@@ -14,10 +14,18 @@ Route::get('/project', function () {
     return view('project');
 });
 
-Route::get('/detail', function () {
+Route::get('/project-detail', function () {
     return view('project_detail');
 });
 
 Route::get('/news', function () {
     return view('news');
+});
+
+Route::get('/news-detail', function () { 
+    return view('news_detail');
+});
+
+Route::get('/contact', function () { 
+    return view('contact');
 });

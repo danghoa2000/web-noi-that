@@ -4,6 +4,11 @@
     font-family: "Afacad";
 }
 
+.container {
+    @media screen and (max-width: 768px) {
+        max-width: 100%;
+    }
+}
 #menu,
 #language {
     background-color: transparent;
@@ -281,19 +286,31 @@ img {
     }
 }
 
+.footer_1 {
+    padding: 60px 0;
+    border-bottom: 1px solid #0a3552;
+}
+
 .footer_2 {
+    flex-direction: column;
+    padding: 60px 0 30px;
     p {
         margin-bottom: 0.25rem;
         color: #999595;
     }
+    span {
+        font-size: 40px;
+        line-height: 45px;
+        color: #d1ad53;
+        padding-top: 35px;
+        padding-bottom: 35px;
+        font-family: "Afacad", sans-serif;
+    }
 }
 
 .footer_3 {
-    span,
-    a {
-        color: #d1ad53;
-        font-size: 14px;
-    }
+    padding: 30px 0;
+
     p,
     i,
     a {
@@ -302,6 +319,27 @@ img {
 
     a {
         text-decoration: none;
+        color: #d1ad53;
+    }
+    span {
+        font-size: 24px;
+        line-height: 30px;
+        color: #d1ad53;
+    }
+
+    .row {
+        width: 100%;
+        margin: auto;
+    }
+}
+
+.header {
+    padding: 30px 0;
+    position: relative;
+    z-index: 1;
+    background: transparent;
+
+    .menu-tool-bar {
     }
 }
 
@@ -331,6 +369,23 @@ img {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+
+    @media screen and (max-width: 768px) {
+        top: 25px;
+    }
+}
+
+.box-background {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    bottom: 0;
+    background-color: #d1ad5333;
+    opacity: 0.2;
+    width: 100%;
+    @media screen and (max-width: 768px) {
+        top: 25px;
+    }
 }
 
 .title-page {
@@ -340,6 +395,11 @@ img {
         font-size: 80px;
         line-height: 84px;
         text-transform: uppercase;
+
+        @media screen and (max-width: 768px) {
+            font-size: 45px;
+            line-height: 50px;
+        }
     }
 }
 
@@ -364,33 +424,7 @@ img {
     width: 30%;
 }
 
-.core-team {
-    &-name {
-        font-size: 24px;
-        font-family: "Abril Fatface";
-        margin: 20px 0;
-    }
-    &-role {
-        padding-left: 10px;
-        font-size: 18px;
-        color: #d1ad53;
-        text-transform: uppercase;
-        &::before {
-            margin-bottom: 4px;
-            content: "";
-            display: inline-block;
-            width: 5px;
-            height: 5px;
-            background-color: #d1ad53;
-            border-radius: 50%;
-            margin-right: 5px;
-        }
-    }
-}
-
 .box-project {
-    display: inline-block;
-    width: 32%;
     margin-bottom: 20px;
     margin-right: 10px;
 }
@@ -414,4 +448,61 @@ img {
     &:hover {
         color: #fff;
     }
+}
+
+.text-50 {
+    font-size: 50px;
+    line-height: 66px;
+}
+
+.text-45 {
+    font-size: 45px;
+    line-height: 55px;
+}
+
+.text-40 {
+    font-size: 40px;
+    line-height: 45px;
+}
+
+.text-35 {
+    font-size: 35px;
+    line-height: 40px;
+}
+
+.text-25 {
+    font-size: 25px;
+    line-height: 30px;
+}
+
+.text-24 {
+    font-size: 24px;
+    line-height: 28px;
+}
+
+.text-18 {
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.mt-40 {
+    margin-top: 40px;
+}
+
+.mt-45 {
+    margin-top: 45px;
+}
+
+.mt-30 {
+    margin-top: 30px;
+}
+
+.end-line {
+    height: 3px;
+    background: #d1ad53;
+    margin-top: 35px;
+}
+
+.color-yellow {
+    color: #d1ad53;
 }
