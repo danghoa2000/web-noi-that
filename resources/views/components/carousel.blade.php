@@ -8,7 +8,7 @@
         @endforeach
 
     </div>
-    <div class="carousel-inner">
+    <div class="{{ $class }}">
         {!! $component !!}
     </div>
 </div>

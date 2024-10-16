@@ -20,53 +20,51 @@
             chia sẻ kiến thức
         </div>
     </div>
-
-    <div id="service" class="service" style="">
-        <div class="">
-            <div class="">
-                <div class="col-12 slick-slider">
-                    <?php
-                    $customerData = [];
+    <div id="" class="service" style="">
+        {{-- <div class="row"> --}}
+            <div>
+                <?php
+                $customerData = [];
                 ?>
-
-                    @for ($i = 0; $i <= 5; $i++) 
-                        <?php 
-                        $customerResponse=(object) [ 
-                            'img'=> ($i % 2 == 0 ? ('img/image_2.png') : ('img/image.png')),
-                            'title' => $i % 2 . ' Thiết kế kiến trúc',
-                        ];
-                        $customerData[$i] = $customerResponse;
-                        ?>
-                        @endfor
-
-                        @include('components.carousel', [
-                            'id' => 'serviceCarousel',
+    
+                @for ($i = 0; $i <= 5; $i++) 
+                    <?php 
+                    $customerResponse=(object) [ 
+                        'img'=> ($i % 2 == 0 ? ('img/image_2.png') : ('img/image.png')),
+                        'title' => $i % 2 . ' Thiết kế kiến trúc',
+                    ];
+                    $customerData[$i] = $customerResponse;
+                    ?>
+                    @endfor
+    
+                    @include('components.carousel', [
+                        'id' => 'serviceCarousel',
+                        'data' => $customerData,
+                        'class' => 'slick-slider',
+                        'component' => \Blade::render('components.carousel_new', [
                             'data' => $customerData,
-                            'component' => \Blade::render('components.carousel_new', [
-                                'data' => $customerData,
-                                'itemPerSlide' => 3 
-                            ])
+                            'itemPerSlide' => 3 
                         ])
-
-                </div>
-                <div class="col-12 mt-40 relative">
-                    <div class="d-flex justify-content-center">
-                        <button class="btn btn-18 btn-cicle btn-outline btn-outline-yellow btn-slide-news-page"
-                            style="margin: 0 10px;" data-bs-target="#serviceCarousel" data-bs-slide="prev"><i
-                                class="fas fa-arrow-right"></i></button>
-                        <button class="btn btn-18 btn-cicle btn-outline btn-outline-yellow btn-slide-news-page"
-                            style="margin: 0 10px;"><i class="fas fa-arrow-left" data-bs-target="#serviceCarousel"
-                                data-bs-slide="next"></i></button>
-                    </div>
+                    ])
+    
+            </div>
+            <div class="col-12 mt-40 relative">
+                <div class="d-flex justify-content-center">
+                    <button class="btn btn-18 btn-cicle btn-outline btn-outline-yellow btn-slide-news-page"
+                        style="margin: 0 10px;" data-bs-target="#serviceCarousel" data-bs-slide="prev"><i
+                            class="fas fa-arrow-right"></i></button>
+                    <button class="btn btn-18 btn-cicle btn-outline btn-outline-yellow btn-slide-news-page"
+                        style="margin: 0 10px;"><i class="fas fa-arrow-left" data-bs-target="#serviceCarousel"
+                            data-bs-slide="next"></i></button>
                 </div>
             </div>
-        </div>
+        {{-- </div> --}}
     </div>
 </div>
 
 <div class="end-line"></div>
 <script>
-    $('.carousel-inner').slick({
+    $('.slick-slider').slick({
         infinite: true,
         speed: 300,
         slidesToShow: 3,

@@ -11,9 +11,9 @@
         </ol>
     </nav>
 </div>
-
-@include('components.page_thumbnail', ['title' => 'Lien He'])
-
+<div class="contact-page">
+    @include('components.page_thumbnail', ['title' => 'Lien He'])
+</div>
 <div class="container" style="margin-top: 60px">
     <div class="row">
         <div class="col-12 col-md-6 col-lg-7 p-0">

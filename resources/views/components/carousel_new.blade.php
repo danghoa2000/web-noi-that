@@ -1,7 +1,7 @@
 @foreach ($data as $item)
 <div class="service-item" style="position: relative">
-    <div class=""
-        style="position: absolute; top:0; left: 0; background-color: #012842; opacity: 0.43; width: 100%; height: 100%;">
+    <div class="box-background"
+        style="opacity: 0.43;">
     </div>
     <img src="{{ $item->img }}" alt="">
     <div class="content">
@@ -11,4 +11,4 @@
             thêm</a>
     </div>
 </div>
-@endforeach
+@endforeach 

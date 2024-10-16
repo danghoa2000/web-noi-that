@@ -24,7 +24,7 @@
 </head>
 
 <body class="font-sans antialiased">
-    <div class="layout_2" style="background-color: #012842; color: #fff;">
+    <div class="layout_2">
         @include('components.header')
         <div class="main-content" style="min-height: 500px">
             @yield('main-content')

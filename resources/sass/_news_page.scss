@@ -1,4 +1,5 @@
 .news-page {
+    overflow: hidden;
     .title-page {
         position: relative;
         margin-top: 10px;
@@ -16,6 +17,9 @@
     .service {
         margin-top: 20px;
         background: #012842;
+        @media screen and (max-width: 768px) {
+            padding-top: 35px;
+        }
     }
 
     .service-item {
@@ -30,6 +34,5 @@
     .slick-list {
         margin-left: -10px;
         margin-right: -10px;
-        pointer-events: none;
     }
 }
